@@ -1,0 +1,57 @@
+{
+    "adaptiveform": "0.10.0",
+    "events": {
+      "custom:submitform": "submitForm('submitSuccess', 'submitError')"
+    },
+    "properties": {
+      "baseUrl": "https://arnjainfunctions.azurewebsites.net",
+      "baseUrlLocal": "https://localhost:7071",
+      "afs:thankyouMessage": "Thank you for submitting the form"
+    },
+    "items": [
+      {
+        "name": "firstName",
+        "fieldType": "text-input",
+        "type": "string",
+        "label": {
+          "value": "First Name"
+        },
+        "events": {
+          "custom:navigate": "{value: $event.payload}"
+        }
+      },
+      {
+        ":type": "custom:text",
+        "name": "lastName",
+        "fieldType": "text-input",
+        "label": {
+          "value": "Last Name"
+        }
+      },
+      {
+        ":type": "custom:text",
+        "name": "age",
+        "fieldType": "text-input",
+        "type": "number",
+        "label": {
+          "value": "Your age"
+        }
+      }
+    ],
+    "metadata": {
+      "grammar": "json-formula-1.0.0",
+      "version": "1.0.0",
+      "description": "Get instant loan on Credit Card!",
+      "name": "Instant Loan",
+      "tags": [
+        "credit",
+        "instant",
+        "card",
+        "loan"
+    ]
+    },
+      "action": "https://core.crispr-api.workers.dev/submit/content/forms/af/hdfc/credit-loan",
+      "thankYouMessage": "Thank you for submitting the form. Loan amount will be credited in your account within few minutes.",
+      "actionType": "POST",
+      "restEndpointPostUrl": "https://forms-api.azure-api.net/api/af"
+  }
